@@ -1,0 +1,21 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "Lesson2"
+include ':LifecycleActivity'
+include ':MultiActivity'
+include ':intentfilter'
+include ':ToastApp'
+include ':notificationapp'
+include ':dialog'
