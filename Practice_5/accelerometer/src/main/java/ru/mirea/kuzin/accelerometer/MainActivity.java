@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        SensorManager sensorManager =
+         sensorManager =
                 (SensorManager)getSystemService(Context.SENSOR_SERVICE);
         accelerometerSensor = sensorManager
                 .getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
@@ -29,19 +29,19 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         rollTextView = findViewById(R.id.textViewRoll);
     }
     @Override
-    protected void onPause() {
+    protected void onPause(){
         super.onPause();
         sensorManager.unregisterListener(this);
     }
     @Override
-    protected void onResume() {
+    protected void onResume(){
         super.onResume();
-        sensorManager.registerListener(this, accelerometerSensor,
-                SensorManager.SENSOR_DELAY_UI);
+        sensorManager.registerListener(this,accelerometerSensor,SensorManager.SENSOR_DELAY_NORMAL);
     }
+
     @Override
-    public void onSensorChanged(SensorEvent event) {
-        if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
+    public void onSensorChanged(SensorEvent event){
+        if(event.sensor.getType() == Sensor.TYPE_ACCELEROMETER){
             float valueAzimuth = event.values[0];
             float valuePitch = event.values[1];
             float valueRoll = event.values[2];
@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             rollTextView.setText("Roll: " + valueRoll);
         }
     }
+
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
     }
