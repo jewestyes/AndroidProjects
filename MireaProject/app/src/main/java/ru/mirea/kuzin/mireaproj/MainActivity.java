@@ -1,6 +1,7 @@
 package ru.mirea.kuzin.mireaproj;
 
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
@@ -46,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.calculateFragment,R.id.webViewFragment)
+                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.calculateFragment,R.id.webViewFragment,R.id.musicPlayer)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
@@ -120,5 +121,14 @@ public class MainActivity extends AppCompatActivity {
         int num2 = Integer.parseInt(element2.getText().toString());
         int result = num1*num2;
         resultText.setText(Integer.toString(result));
+    }
+
+    public void onClickPlayMusic(View view) {
+        startService(
+                new Intent(MainActivity.this, MusicService.class));
+    }
+    public void onClickStopMusic(View view) {
+        stopService(
+                new Intent(MainActivity.this, MusicService.class));
     }
 }
