@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CalculateFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/Num1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Введите первое число"
+            android:inputType="number"
+            android:minHeight="48dp"
+            app:layout_constraintBottom_toTopOf="@+id/Num2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.179"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <EditText
+            android:id="@+id/Num2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="484dp"
+            android:ems="10"
+            android:hint="Введите второе число"
+            android:inputType="number"
+            android:minHeight="48dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.179"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/Multiplication"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:text="*"
+            android:onClick="OnClick4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/Div"
+            app:layout_constraintTop_toBottomOf="@+id/Num2"
+            app:layout_constraintVertical_bias="0.048" />
+
+        <Button
+            android:id="@+id/Subtraction"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="21dp"
+            android:text="-"
+            android:onClick="OnClick2"
+            app:layout_constraintStart_toEndOf="@+id/Sum"
+            app:layout_constraintTop_toBottomOf="@+id/Num2" />
+
+        <Button
+            android:id="@+id/Div"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="21dp"
+            android:text="/"
+            android:onClick="OnClick3"
+            app:layout_constraintStart_toEndOf="@+id/Subtraction"
+            app:layout_constraintTop_toBottomOf="@+id/Num2" />
+
+        <Button
+            android:id="@+id/Sum"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="21dp"
+            android:onClick="OnClick1"
+            android:text="+"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Num2" />
+
+        <TextView
+            android:id="@+id/Result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:text="Результат:"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.117"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Num2"
+            app:layout_constraintVertical_bias="0.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
