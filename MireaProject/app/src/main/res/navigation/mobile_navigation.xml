@@ -12,17 +12,6 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="ru.mirea.kuzin.mireaproj.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
-
-    <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="ru.mirea.kuzin.mireaproj.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
-    <fragment
         android:id="@+id/calculateFragment"
         android:name="ru.mirea.kuzin.mireaproj.ui.Calculate.CalculateFragment"
         android:label="fragment_calculate"
@@ -51,5 +40,14 @@
         android:name="ru.mirea.kuzin.mireaproj.ui.Photo.FragmentPhoto"
         android:label="fragment_photo"
         tools:layout="@layout/fragment_photo" />
+    <fragment
+        android:id="@+id/homeSettingsFragment"
+        android:name="ru.mirea.kuzin.mireaproj.ui.Settings.HomeSettingsFragment"
+        android:label="fragment_home_settings"
+        tools:layout="@layout/fragment_home_settings" />
+    <fragment
+        android:id="@+id/retroitFragment"
+        android:name="ru.mirea.kuzin.mireaproj.ui.Retrofit.RetroitFragment"
+        android:label="RetroitFragment" />
 
 </navigation>

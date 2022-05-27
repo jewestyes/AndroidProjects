@@ -9,14 +9,6 @@
             android:icon="@drawable/ic_house"
             android:title="@string/menu_home" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
-        <item
             android:id="@+id/calculateFragment"
             android:icon="@drawable/ic_journal"
             android:title="Calculate" />
@@ -43,6 +35,18 @@
             android:id="@+id/fragmentPhoto"
             android:icon="@drawable/ic_camera2"
             android:title="Photo" />
+
+        <item
+            android:id="@+id/homeSettingsFragment"
+            android:icon="@drawable/side_nav_bar"
+            android:title="Settings" />
+
+        <item
+            android:id="@+id/retroitFragment"
+            android:icon="@drawable/side_nav_bar"
+            android:title="Retroit" />
+
+
 
     </group>
 </menu>
