@@ -24,17 +24,17 @@
         tools:layout="@layout/fragment_slideshow" />
     <fragment
         android:id="@+id/calculateFragment"
-        android:name="ru.mirea.kuzin.mireaproj.CalculateFragment"
+        android:name="ru.mirea.kuzin.mireaproj.ui.Calculate.CalculateFragment"
         android:label="fragment_calculate"
         tools:layout="@layout/fragment_calculate" />
     <fragment
         android:id="@+id/webViewFragment"
-        android:name="ru.mirea.kuzin.mireaproj.WebViewFragment"
+        android:name="ru.mirea.kuzin.mireaproj.ui.Web.WebViewFragment"
         android:label="fragment_web_view"
         tools:layout="@layout/fragment_web_view" />
     <fragment
         android:id="@+id/musicPlayer"
-        android:name="ru.mirea.kuzin.mireaproj.MusicPlayer"
+        android:name="ru.mirea.kuzin.mireaproj.ui.Music.MusicPlayer"
         android:label="fragment_music_player"
         tools:layout="@layout/fragment_music_player" />
 

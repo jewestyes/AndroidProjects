@@ -1,19 +1,14 @@
 package ru.mirea.kuzin.mireaproj;
 
-import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
-
-import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -27,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
-    private WebView web;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,13 +31,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.appBarMain.toolbar);
-        binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        binding.appBarMain.fab.setOnClickListener(view -> Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show());
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         mAppBarConfiguration = new AppBarConfiguration.Builder(
@@ -58,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
@@ -71,10 +59,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void OnClick1(View view) {
-        EditText element1 = (EditText) findViewById(R.id.Num1);
-        EditText element2 = (EditText) findViewById(R.id.Num2);
+        EditText element1 = findViewById(R.id.Num1);
+        EditText element2 = findViewById(R.id.Num2);
 
-        TextView resultText = (TextView) findViewById(R.id.Result);
+        TextView resultText = findViewById(R.id.Result);
 
         int num1 = Integer.parseInt(element1.getText().toString());
         int num2 = Integer.parseInt(element2.getText().toString());
@@ -83,10 +71,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void OnClick2(View view) {
-        EditText element1 = (EditText) findViewById(R.id.Num1);
-        EditText element2 = (EditText) findViewById(R.id.Num2);
+        EditText element1 = findViewById(R.id.Num1);
+        EditText element2 = findViewById(R.id.Num2);
 
-        TextView resultText = (TextView) findViewById(R.id.Result);
+        TextView resultText = findViewById(R.id.Result);
 
         int num1 = Integer.parseInt(element1.getText().toString());
         int num2 = Integer.parseInt(element2.getText().toString());
@@ -94,10 +82,10 @@ public class MainActivity extends AppCompatActivity {
         resultText.setText(Integer.toString(result));
     }
     public void OnClick3(View view) {
-        EditText element1 = (EditText) findViewById(R.id.Num1);
-        EditText element2 = (EditText) findViewById(R.id.Num2);
+        EditText element1 = findViewById(R.id.Num1);
+        EditText element2 = findViewById(R.id.Num2);
 
-        TextView resultText = (TextView) findViewById(R.id.Result);
+        TextView resultText = findViewById(R.id.Result);
 
         int num1 = Integer.parseInt(element1.getText().toString());
         int num2 = Integer.parseInt(element2.getText().toString());
@@ -112,10 +100,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     public void OnClick4(View view) {
-        EditText element1 = (EditText) findViewById(R.id.Num1);
-        EditText element2 = (EditText) findViewById(R.id.Num2);
+        EditText element1 = findViewById(R.id.Num1);
+        EditText element2 = findViewById(R.id.Num2);
 
-        TextView resultText = (TextView) findViewById(R.id.Result);
+        TextView resultText = findViewById(R.id.Result);
 
         int num1 = Integer.parseInt(element1.getText().toString());
         int num2 = Integer.parseInt(element2.getText().toString());
@@ -123,12 +111,4 @@ public class MainActivity extends AppCompatActivity {
         resultText.setText(Integer.toString(result));
     }
 
-    public void onClickPlayMusic(View view) {
-        startService(
-                new Intent(MainActivity.this, MusicService.class));
-    }
-    public void onClickStopMusic(View view) {
-        stopService(
-                new Intent(MainActivity.this, MusicService.class));
-    }
 }

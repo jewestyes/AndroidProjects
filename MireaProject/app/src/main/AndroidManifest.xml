@@ -17,7 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MireaProj">
         <service
-            android:name=".MusicService"
+            android:name=".ui.Music.MusicService"
             android:enabled="true"
             android:exported="true"></service>
         <service
