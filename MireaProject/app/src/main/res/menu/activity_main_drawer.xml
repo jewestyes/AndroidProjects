@@ -6,7 +6,7 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_house"
             android:title="@string/menu_home" />
         <item
             android:id="@+id/nav_gallery"
@@ -18,30 +18,30 @@
             android:title="@string/menu_slideshow" />
         <item
             android:id="@+id/calculateFragment"
-            android:icon="@drawable/calculate_background"
+            android:icon="@drawable/ic_journal"
             android:title="Calculate" />
         <item
             android:id="@+id/webViewFragment"
-            android:icon="@drawable/webbrowser_background"
+            android:icon="@drawable/ic_globe2"
             android:title="WebBrowser" />
         <item
             android:id="@+id/musicPlayer"
-            android:icon="@drawable/webbrowser_background"
+            android:icon="@drawable/ic_music_note_beamed"
             android:title="Music" />
 
         <item
             android:id="@+id/fragmentAudio"
-            android:icon="@drawable/webbrowser_background"
+            android:icon="@drawable/ic_mic_fill"
             android:title="Audio" />
 
         <item
             android:id="@+id/sensorFragment"
-            android:icon="@drawable/webbrowser_background"
+            android:icon="@drawable/ic_heart_pulse"
             android:title="Sensor" />
 
         <item
             android:id="@+id/fragmentPhoto"
-            android:icon="@drawable/webbrowser_background"
+            android:icon="@drawable/ic_camera2"
             android:title="Photo" />
 
     </group>
