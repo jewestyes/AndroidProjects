@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="btnStart" type="id" />
+    <item name="btnStop" type="id" />
+    <item name="button_play_audio" type="id" />
+    <item name="button_stop_audio" type="id" />
+    <item name="textViewAzimuth" type="id" />
+    <item name="textViewPitch" type="id" />
+    <item name="textViewRoll" type="id" />
+    <item name="textViewPressure" type="id" />
+    <item name="textViewTemperature" type="id" />
+    <item name="buttonPhoto" type="id" />
+</resources>

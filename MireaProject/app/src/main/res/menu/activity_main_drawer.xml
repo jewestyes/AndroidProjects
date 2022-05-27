@@ -29,5 +29,20 @@
             android:icon="@drawable/webbrowser_background"
             android:title="Music" />
 
+        <item
+            android:id="@+id/fragmentAudio"
+            android:icon="@drawable/webbrowser_background"
+            android:title="Audio" />
+
+        <item
+            android:id="@+id/sensorFragment"
+            android:icon="@drawable/webbrowser_background"
+            android:title="Sensor" />
+
+        <item
+            android:id="@+id/fragmentPhoto"
+            android:icon="@drawable/webbrowser_background"
+            android:title="Photo" />
+
     </group>
 </menu>
