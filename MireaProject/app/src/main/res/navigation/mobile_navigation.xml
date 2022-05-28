@@ -49,5 +49,10 @@
         android:id="@+id/retroitFragment"
         android:name="ru.mirea.kuzin.mireaproj.ui.Retrofit.RetroitFragment"
         android:label="RetroitFragment" />
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="ru.mirea.kuzin.mireaproj.ui.maps.MapsFragment"
+        android:label="fragment_maps"
+        tools:layout="@layout/fragment_maps" />
 
 </navigation>

@@ -22,6 +22,10 @@
         android:theme="@style/Theme.MireaProj"
         android:usesCleartextTraffic="true">
 
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBdHib-W9FVXYkPnzkQrAVLw6cVs_cKVcM" />
+
         <service
             android:name=".ui.Audio.AudioService"
             android:enabled="true"

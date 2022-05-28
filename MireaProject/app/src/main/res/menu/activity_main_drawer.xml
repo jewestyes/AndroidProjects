@@ -38,15 +38,18 @@
 
         <item
             android:id="@+id/homeSettingsFragment"
-            android:icon="@drawable/side_nav_bar"
+            android:icon="@drawable/ic_gear_wide_connected"
             android:title="Settings" />
 
         <item
             android:id="@+id/retroitFragment"
-            android:icon="@drawable/side_nav_bar"
+            android:icon="@drawable/ic_bounding_box"
             android:title="Retroit" />
 
-
+        <item
+            android:id="@+id/mapsFragment"
+            android:icon="@drawable/ic_cursor"
+            android:title="Maps" />
 
     </group>
 </menu>

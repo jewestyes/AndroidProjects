@@ -7,6 +7,16 @@
     tools:context=".ui.Photo.FragmentPhoto">
 
     <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="471dp"
+        android:layout_height="608dp"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/home_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
         android:id="@+id/imageView"
         android:layout_width="322dp"
         android:layout_height="341dp"
@@ -20,8 +30,8 @@
         android:id="@+id/buttonPhoto"
         android:layout_width="202dp"
         android:layout_height="75dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="432dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="524dp"
         android:onClick="imageViewOnClick"
         android:text="Сфотографировать"
         app:layout_constraintStart_toStartOf="parent"

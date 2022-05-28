@@ -10,11 +10,21 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="471dp"
+            android:layout_height="608dp"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/home_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <Button
             android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="4dp"
+            android:layout_marginBottom="124dp"
             android:onClick="PlayOrStopMusic"
             android:text="start"
             app:layout_constraintBottom_toBottomOf="parent"

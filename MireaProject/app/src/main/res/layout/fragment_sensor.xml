@@ -7,6 +7,16 @@
     tools:context=".ui.Sensor.SensorFragment">
 
 
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="471dp"
+        android:layout_height="608dp"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/home_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/textViewAzimuth"
         android:gravity="center"
