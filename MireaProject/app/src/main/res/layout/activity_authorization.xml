@@ -23,12 +23,12 @@
         android:id="@+id/detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="396dp"
+        android:layout_marginTop="408dp"
         android:text="@string/emailpassword_title_text"
         android:textColor="@color/white"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.929"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -41,7 +41,7 @@
         android:textColor="@color/white"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintHorizontal_bias="0.052"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/detail" />
 
@@ -114,6 +114,7 @@
         android:id="@+id/enterButton"
         android:layout_width="209dp"
         android:layout_height="48dp"
+        android:layout_marginEnd="200dp"
         android:layout_marginBottom="48dp"
         android:text="Войти"
         app:layout_constraintBottom_toTopOf="@+id/table"

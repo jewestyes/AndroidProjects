@@ -54,5 +54,10 @@
         android:name="ru.mirea.kuzin.mireaproj.ui.maps.MapsFragment"
         android:label="fragment_maps"
         tools:layout="@layout/fragment_maps" />
+    <fragment
+        android:id="@+id/userInfoFragment"
+        android:name="ru.mirea.kuzin.mireaproj.ui.UserInfo.UserInfoFragment"
+        android:label="fragment_user_info"
+        tools:layout="@layout/fragment_user_info" />
 
 </navigation>

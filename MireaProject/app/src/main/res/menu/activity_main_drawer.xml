@@ -51,5 +51,10 @@
             android:icon="@drawable/ic_cursor"
             android:title="Maps" />
 
+        <item
+            android:id="@+id/userInfoFragment"
+            android:icon="@drawable/ic_key"
+            android:title="UserInfo" />
+
     </group>
 </menu>

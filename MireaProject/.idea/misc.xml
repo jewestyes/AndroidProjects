@@ -25,6 +25,7 @@
         <entry key="..\:/AndroidGit/AndroidProjects/MireaProject/app/src/main/res/drawable/ic_heart_pulse.xml" value="0.2215" />
         <entry key="..\:/AndroidGit/AndroidProjects/MireaProject/app/src/main/res/drawable/ic_house.xml" value="0.2215" />
         <entry key="..\:/AndroidGit/AndroidProjects/MireaProject/app/src/main/res/drawable/ic_journal.xml" value="0.2215" />
+        <entry key="..\:/AndroidGit/AndroidProjects/MireaProject/app/src/main/res/drawable/ic_key.xml" value="0.1" />
         <entry key="..\:/AndroidGit/AndroidProjects/MireaProject/app/src/main/res/drawable/ic_menu_camera.xml" value="0.3395" />
         <entry key="..\:/AndroidGit/AndroidProjects/MireaProject/app/src/main/res/drawable/ic_mic_fill.xml" value="0.3395" />
         <entry key="..\:/AndroidGit/AndroidProjects/MireaProject/app/src/main/res/drawable/ic_music_note_beamed.xml" value="0.2215" />
@@ -48,6 +49,8 @@
         <entry key="..\:/AndroidGit/AndroidProjects/MireaProject/app/src/main/res/layout/fragment_retrofit.xml" value="0.21195652173913043" />
         <entry key="..\:/AndroidGit/AndroidProjects/MireaProject/app/src/main/res/layout/fragment_sensor.xml" value="0.21965579710144928" />
         <entry key="..\:/AndroidGit/AndroidProjects/MireaProject/app/src/main/res/layout/fragment_slideshow.xml" value="0.21965579710144928" />
+        <entry key="..\:/AndroidGit/AndroidProjects/MireaProject/app/src/main/res/layout/fragment_user_info.xml" value="0.36666666666666664" />
+        <entry key="..\:/AndroidGit/AndroidProjects/MireaProject/app/src/main/res/layout/fragment_userinfo.xml" value="0.3" />
         <entry key="..\:/AndroidGit/AndroidProjects/MireaProject/app/src/main/res/layout/fragment_web_view.xml" value="0.21965579710144928" />
         <entry key="..\:/AndroidGit/AndroidProjects/MireaProject/app/src/main/res/layout/item_retrofit.xml" value="0.21195652173913043" />
         <entry key="..\:/AndroidGit/AndroidProjects/MireaProject/app/src/main/res/layout/nav_header_main.xml" value="0.21965579710144928" />
