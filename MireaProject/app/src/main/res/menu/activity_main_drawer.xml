@@ -56,5 +56,10 @@
             android:icon="@drawable/ic_key"
             android:title="UserInfo" />
 
+        <item
+            android:id="@+id/storiesFragment"
+            android:icon="@drawable/ic_key"
+            android:title="Stories" />
+
     </group>
 </menu>
