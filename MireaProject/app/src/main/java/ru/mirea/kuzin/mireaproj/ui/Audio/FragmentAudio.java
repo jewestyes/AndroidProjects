@@ -9,11 +9,6 @@ import android.content.pm.PackageManager;
 import android.media.MediaRecorder;
 import android.net.Uri;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.core.app.ActivityCompat;
-import androidx.fragment.app.Fragment;
-
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
@@ -23,11 +18,15 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
-import ru.mirea.kuzin.mireaproj.MainActivity;
-import ru.mirea.kuzin.mireaproj.R;
+import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.fragment.app.Fragment;
 
 import java.io.File;
 import java.io.IOException;
+
+import ru.mirea.kuzin.mireaproj.MainActivity;
+import ru.mirea.kuzin.mireaproj.R;
 
 public class FragmentAudio extends Fragment {
     private static final String TAG_AUDIO = MainActivity.class.getSimpleName();
@@ -106,9 +105,7 @@ public class FragmentAudio extends Fragment {
         if (!isWorkAudio) {
             ActivityCompat.requestPermissions(getActivity(), PERMISSIONS, REQUEST_CODE_PERMISSION);
         }
-
-        audioFile = new File(Environment.getExternalStorageDirectory() + "/mirea.3gp");
-
+        audioFile = new File(Environment.getExternalStorageDirectory().toString().replaceAll(":", ".") + "/mirea.3gp");
         return view;
     }
 
@@ -126,9 +123,7 @@ public class FragmentAudio extends Fragment {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        // Audio
         if (requestCode == REQUEST_CODE_PERMISSION) {
-            // permission granted
             isWorkAudio = grantResults.length > 0
                     && grantResults[0] == PackageManager.PERMISSION_GRANTED;
         }
@@ -160,7 +155,8 @@ public class FragmentAudio extends Fragment {
             mediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
             mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
             mediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
-            String path = Environment.getExternalStorageDirectory() + "/mirea.3gp";
+            String path = Environment.getExternalStorageDirectory().toString().replaceAll(":", ".") + "/mirea.3gp";
+
             mediaRecorder.setOutputFile(path);
             mediaRecorder.prepare();
             mediaRecorder.start();

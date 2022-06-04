@@ -14,6 +14,7 @@
     <item name="tv_reply" type="id" />
     <item name="tv_sync" type="id" />
     <item name="fab_settings" type="id" />
-    <item name="action_nav_settings_to_settingsFragment" type="id" />
     <item name="adapterFlipper" type="id" />
+    <item name="textview" type="id" />
+    <item name="edittext" type="id" />
 </resources>

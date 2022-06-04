@@ -7,33 +7,28 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
 import ru.mirea.kuzin.mireaproj.R;
-import ru.mirea.kuzin.mireaproj.databinding.FragmentHomeBinding;
 
 public class SensorFragment extends Fragment implements SensorEventListener{
     private Activity mActivity;
-    private FragmentHomeBinding binding;
 
-    private TextView azimuthTextView;
-    private TextView pitchTextView;
-    private TextView rollTextView;
-    private TextView pressureTextView;
-    private TextView temperatureTextView;
+    private TextView gameRotationTextView;
+    private TextView gravityTextView;
+    private TextView magneticTextView;
 
     private SensorManager sensorManager;
-    private Sensor accelerometerSensor;
-    private Sensor pressureSensor;
-    private Sensor temperatureSensor;
+    private Sensor game_rotation;
+    private Sensor gravity;
+    private Sensor magnetic;
 
     public SensorFragment() {
     }
@@ -48,9 +43,9 @@ public class SensorFragment extends Fragment implements SensorEventListener{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         sensorManager = (SensorManager) this.getActivity().getSystemService(Context.SENSOR_SERVICE);
-        accelerometerSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-        pressureSensor =  sensorManager.getDefaultSensor(Sensor.TYPE_PRESSURE);
-        temperatureSensor =  sensorManager.getDefaultSensor(Sensor.TYPE_AMBIENT_TEMPERATURE);
+        game_rotation =  sensorManager.getDefaultSensor(Sensor.TYPE_GAME_ROTATION_VECTOR);
+        gravity =  sensorManager.getDefaultSensor(Sensor.TYPE_GRAVITY);
+        magnetic = sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
     }
 
     @Override
@@ -61,11 +56,10 @@ public class SensorFragment extends Fragment implements SensorEventListener{
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        azimuthTextView = getView().findViewById(R.id.textViewAzimuth);
-        pitchTextView = getView().findViewById(R.id.textViewPitch);
-        rollTextView = getView().findViewById(R.id.textViewRoll);
-        pressureTextView = getView().findViewById(R.id.textViewPressure);
-        temperatureTextView = getView().findViewById(R.id.textViewTemperature);
+
+        gameRotationTextView = getView().findViewById(R.id.gameRotationTextView);
+        gravityTextView = getView().findViewById(R.id.gravityTextView);
+        magneticTextView = getView().findViewById(R.id.magneticTextView);
     }
 
     @Override
@@ -76,30 +70,29 @@ public class SensorFragment extends Fragment implements SensorEventListener{
     @Override
     public void onResume() {
         super.onResume();
-        sensorManager.registerListener(this, accelerometerSensor,
+        sensorManager.registerListener(this, magnetic,
                 SensorManager.SENSOR_DELAY_NORMAL);
-        sensorManager.registerListener(this, pressureSensor,
+        sensorManager.registerListener(this, game_rotation,
                 SensorManager.SENSOR_DELAY_NORMAL);
-        sensorManager.registerListener(this, temperatureSensor,
+        sensorManager.registerListener(this, gravity,
                 SensorManager.SENSOR_DELAY_NORMAL);
     }
     @Override
     public void onSensorChanged(SensorEvent event) {
         if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
-            float valueAzimuth = event.values[0];
-            float valuePitch = event.values[1];
-            float valueRoll = event.values[2];
-            azimuthTextView.setText("Azimuth: " + valueAzimuth);
-            pitchTextView.setText("Pitch: " + valuePitch);
-            rollTextView.setText("Roll: " + valueRoll);
+
         }
-        if (event.sensor.getType() == Sensor.TYPE_PRESSURE){
-            float valuePressure = event.values[0];
-            pressureTextView.setText("Pressure: "+valuePressure);
+        if (event.sensor.getType() == Sensor.TYPE_GAME_ROTATION_VECTOR){
+            float valueRotation = event.values[0];
+            gameRotationTextView.setText("Game rotation: " + valueRotation);
         }
-        if (event.sensor.getType() == Sensor.TYPE_AMBIENT_TEMPERATURE){
-            float valueTemperature = event.values[0];
-            temperatureTextView.setText("Temperature: "+ valueTemperature);
+        if (event.sensor.getType() == Sensor.TYPE_GRAVITY){
+            float valueGravity = event.values[0];
+            gravityTextView.setText("Gravity: "+ valueGravity);
+        }
+        if (event.sensor.getType() == Sensor.TYPE_MAGNETIC_FIELD){
+            float valueMagnetic = event.values[0];
+            magneticTextView.setText("Magnetic: "+ valueMagnetic);
         }
     }
     @Override

@@ -1,54 +1,82 @@
 package ru.mirea.kuzin.mireaproj.ui.Settings;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.navigation.Navigation;
-import androidx.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.fragment.app.Fragment;
+
 import ru.mirea.kuzin.mireaproj.R;
 
 public class HomeSettingsFragment extends Fragment {
-    private SharedPreferences preferences;
-    TextView tv_signature;
-    TextView tv_reply;
-    TextView tv_sync;
+    private TextView textView;
+    private EditText editText;
+    private Button applyTextButton;
+    private Button saveButton;
+    private Switch switch1;
 
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
+    public static final String SHARED_PREFS = "sharedPrefs";
+    public static final String TEXT = "text";
+    public static final String SWITCH1 = "switch1";
 
+    private String text;
+    private boolean switchOnOff;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_home_settings, container, false);
+        View v = inflater.inflate(R.layout.fragment_home_settings, null);
 
+        textView = (TextView) v.findViewById(R.id.textview);
+        editText = (EditText) v.findViewById(R.id.edittext);
+        applyTextButton = (Button) v.findViewById(R.id.apply_text_button);
+        saveButton = (Button) v.findViewById(R.id.save_button);
+        switch1 = (Switch) v.findViewById(R.id.switch1);
+
+        applyTextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                textView.setText(editText.getText().toString());
+            }
+        });
+
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                saveData();
+            }
+        });
+
+        loadData();
+        updateViews();
+
+        return v;
     }
+    public void saveData() {
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
 
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        tv_signature = getView().findViewById(R.id.tv_signature);
-        tv_reply = getView().findViewById(R.id.tv_reply);
-        tv_sync = getView().findViewById(R.id.tv_sync);
-        settings();
+        editor.putString(TEXT, textView.getText().toString());
+        editor.putBoolean(SWITCH1, switch1.isChecked());
+
+        editor.apply();
+
+        Toast.makeText(getActivity(), "Data saved", Toast.LENGTH_SHORT).show();
     }
-
-    private void settings() {
-        preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
-
-        String signature = preferences.getString("signature", "");
-        String defaultReplyAction = preferences.getString("reply", "");
-        boolean sync = preferences.getBoolean("sync", true);
-
-        tv_signature.setText("Signature: "+ signature);
-        tv_reply.setText("Default reply: "+ defaultReplyAction);
-        tv_sync.setText("Sync: "+ sync);
+    public void loadData() {
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
+        text = sharedPreferences.getString(TEXT, "");
+        switchOnOff = sharedPreferences.getBoolean(SWITCH1, false);
+    }
+    public void updateViews() {
+        textView.setText(text);
+        switch1.setChecked(switchOnOff);
     }
 }

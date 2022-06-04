@@ -21,6 +21,8 @@ public class AudioService extends Service {
     public void onCreate(){
         String audioFile = Environment.getExternalStorageDirectory() + "/mirea.3gp";
 
+        audioFile.replaceAll(":", ".");
+
         try {
             mediaPlayer = new MediaPlayer();
             mediaPlayer.setDataSource(audioFile);
