@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,11 +20,9 @@ public class HomeSettingsFragment extends Fragment {
     private EditText editText;
     private Button applyTextButton;
     private Button saveButton;
-    private Switch switch1;
 
     public static final String SHARED_PREFS = "sharedPrefs";
     public static final String TEXT = "text";
-    public static final String SWITCH1 = "switch1";
 
     private String text;
     private boolean switchOnOff;
@@ -38,7 +35,6 @@ public class HomeSettingsFragment extends Fragment {
         editText = (EditText) v.findViewById(R.id.edittext);
         applyTextButton = (Button) v.findViewById(R.id.apply_text_button);
         saveButton = (Button) v.findViewById(R.id.save_button);
-        switch1 = (Switch) v.findViewById(R.id.switch1);
 
         applyTextButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,8 +60,6 @@ public class HomeSettingsFragment extends Fragment {
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
         editor.putString(TEXT, textView.getText().toString());
-        editor.putBoolean(SWITCH1, switch1.isChecked());
-
         editor.apply();
 
         Toast.makeText(getActivity(), "Data saved", Toast.LENGTH_SHORT).show();
@@ -73,10 +67,8 @@ public class HomeSettingsFragment extends Fragment {
     public void loadData() {
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
         text = sharedPreferences.getString(TEXT, "");
-        switchOnOff = sharedPreferences.getBoolean(SWITCH1, false);
     }
     public void updateViews() {
         textView.setText(text);
-        switch1.setChecked(switchOnOff);
     }
 }

@@ -39,7 +39,6 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.emailSignInButton).setOnClickListener(this);
         findViewById(R.id.emailCreateAccountButton).setOnClickListener(this);
         findViewById(R.id.signOutButton).setOnClickListener(this);
-        findViewById(R.id.verifyEmailButton).setOnClickListener(this);
         mAuth = FirebaseAuth.getInstance();
 
         enterButton.setVisibility(View.VISIBLE);
@@ -73,7 +72,6 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
             findViewById(R.id.emailPasswordButtons).setVisibility(View.GONE);
             findViewById(R.id.emailPasswordFields).setVisibility(View.GONE);
             findViewById(R.id.signedInButtons).setVisibility(View.VISIBLE);
-            findViewById(R.id.verifyEmailButton).setEnabled(!user.isEmailVerified());
             enterButton.setVisibility(View.VISIBLE);
         } else {
             findViewById(R.id.emailPasswordButtons).setVisibility(View.VISIBLE);
@@ -158,10 +156,6 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
             signIn(mEmailField.getText().toString(), mPasswordField.getText().toString());
         } else if (i == R.id.signOutButton) {
             signOut();
-        } else if (i == R.id.verifyEmailButton) {
-            FirebaseUser user = mAuth.getCurrentUser();
-            assert user != null;
-            user.sendEmailVerification();
         }
     }
 

@@ -2,13 +2,12 @@ package ru.mirea.kuzin.mireaproj.ui.Music;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
+import androidx.fragment.app.Fragment;
 
 import ru.mirea.kuzin.mireaproj.R;
 
@@ -58,4 +57,16 @@ public class MusicPlayer extends Fragment {
     }
 
 
+    public void Method(View view) {
+        if (!musicPlay){
+            onClickPlayMusic();
+            musicPlay = true;
+            playButton.setText("Stop");
+        }
+        else{
+            onClickStopMusic();
+            musicPlay = false;
+            playButton.setText("Play");
+        }
+    }
 }

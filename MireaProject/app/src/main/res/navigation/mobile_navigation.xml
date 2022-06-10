@@ -47,7 +47,7 @@
         tools:layout="@layout/fragment_home_settings" />
     <fragment
         android:id="@+id/retroitFragment"
-        android:name="ru.mirea.kuzin.mireaproj.ui.Retrofit.RetroitFragment"
+        android:name="ru.mirea.kuzin.mireaproj.ui.Retrofit.RetrofitFragment"
         android:label="RetroitFragment" />
     <fragment
         android:id="@+id/mapsFragment"

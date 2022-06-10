@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import ru.mirea.kuzin.mireaproj.R;
 
+
 public class MyViewHolder extends RecyclerView.ViewHolder {
 
     TextView txtName;
