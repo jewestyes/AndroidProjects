@@ -11,7 +11,7 @@
         android:id="@+id/magneticTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="96dp"
         android:gravity="center"
         android:text=""
         app:layout_constraintStart_toStartOf="parent"
@@ -52,7 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="7dp"
         android:gravity="center"
-        android:text="Gravity"
+        android:text="Light counter:"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gameRotationTextView" />
 
@@ -60,9 +60,9 @@
         android:id="@+id/textView5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="68dp"
         android:gravity="center"
-        android:text="Magnetic:"
+        android:text="Steps counter:"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gameRotationTextView" />
 

@@ -22,13 +22,13 @@ public class SensorFragment extends Fragment implements SensorEventListener{
     private Activity mActivity;
 
     private TextView gameRotationTextView;
-    private TextView gravityTextView;
-    private TextView magneticTextView;
+    private TextView lightTextView;
+    private TextView stepsTextView;
 
     private SensorManager sensorManager;
     private Sensor accelerometerSensor;
-    private Sensor pressureSensor;
-    private Sensor gameRotation;
+    private Sensor lightValues;
+    private Sensor steps;
 
     public SensorFragment() {
     }
@@ -44,8 +44,8 @@ public class SensorFragment extends Fragment implements SensorEventListener{
         super.onCreate(savedInstanceState);
         sensorManager = (SensorManager) this.getActivity().getSystemService(Context.SENSOR_SERVICE);
         accelerometerSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-        pressureSensor =  sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
-        gameRotation =  sensorManager.getDefaultSensor(Sensor.TYPE_GAME_ROTATION_VECTOR);
+        lightValues =  sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
+        steps =  sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
     }
 
     @Override
@@ -58,8 +58,8 @@ public class SensorFragment extends Fragment implements SensorEventListener{
         super.onViewCreated(view, savedInstanceState);
 
         gameRotationTextView = getView().findViewById(R.id.gameRotationTextView);
-        gravityTextView = getView().findViewById(R.id.gravityTextView);
-        magneticTextView = getView().findViewById(R.id.magneticTextView);
+        lightTextView = getView().findViewById(R.id.gravityTextView);
+        stepsTextView = getView().findViewById(R.id.magneticTextView);
     }
 
     @Override
@@ -72,27 +72,25 @@ public class SensorFragment extends Fragment implements SensorEventListener{
         super.onResume();
         sensorManager.registerListener(this, accelerometerSensor,
                 SensorManager.SENSOR_DELAY_NORMAL);
-        sensorManager.registerListener(this, pressureSensor,
+        sensorManager.registerListener(this, lightValues,
                 SensorManager.SENSOR_DELAY_NORMAL);
-        sensorManager.registerListener(this, gameRotation,
+        sensorManager.registerListener(this, steps,
                 SensorManager.SENSOR_DELAY_NORMAL);
     }
     @Override
     public void onSensorChanged(SensorEvent event) {
-        if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
-
-        }
         if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER){
             float valueAccelometer = event.values[0];
             gameRotationTextView.setText("Accelerometer: " + valueAccelometer);
         }
-        if (event.sensor.getType() == Sensor.TYPE_MAGNETIC_FIELD){
-            float valuePressure = event.values[0];
-            gravityTextView.setText("Pressure: "+ valuePressure);
+        if (event.sensor.getType() == Sensor.TYPE_LIGHT){
+            float lightValue = event.values[0];
+            lightTextView.setText("Light value: "+ lightValue);
         }
-        if (event.sensor.getType() == Sensor.TYPE_GAME_ROTATION_VECTOR){
-            float valueRotation = event.values[0];
-            magneticTextView.setText("GameRotation: "+ valueRotation);
+
+        if (event.sensor.getType() == Sensor.TYPE_STEP_COUNTER){
+            float stepsValue = event.values[0];
+            stepsTextView.setText("steps value: "+ stepsValue);
         }
     }
     @Override
