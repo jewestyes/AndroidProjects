@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@color/white"
+    android:background="@color/purple_200"
     tools:context=".ui.UserInfo.UserInfoFragment"
     android:orientation="vertical">
+
 
     <EditText
         android:id="@+id/etName"
@@ -25,30 +27,47 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <Button
             android:id="@+id/btnAdd"
-            android:textColor="@color/green"
-            android:backgroundTint="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Add">
-        </Button>
+            android:backgroundTint="@color/black"
+            android:text="Add"
+            android:textColor="@color/green"></Button>
+
         <Button
             android:id="@+id/btnRead"
-            android:textColor="#bb860c"
-            android:backgroundTint="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Read">
-        </Button>
+            android:backgroundTint="@color/black"
+            android:text="Read"
+            android:textColor="#bb860c"></Button>
+
         <Button
             android:id="@+id/btnClear"
-            android:textColor="#c70000"
-            android:backgroundTint="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Clear">
-        </Button>
+            android:backgroundTint="@color/black"
+            android:text="Clear"
+            android:textColor="#c70000"></Button>
 
     </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/gif2"
+            android:layout_width="493dp"
+            android:layout_height="620dp"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/gif2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.731"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </LinearLayout>

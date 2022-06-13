@@ -3,17 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    style="@style/Theme.AppCompat.DayNight.NoActionBar"
     android:layout_height="match_parent"
+    android:background="#6495ED"
     tools:context=".ui.Audio.FragmentAudio">
 
-
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="471dp"
-        android:layout_height="608dp"
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="493dp"
+        android:layout_height="620dp"
         android:layout_marginTop="4dp"
-        android:src="@drawable/home_background"
+        android:id="@+id/gifka3"
+        android:src="@drawable/gif3"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.707"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

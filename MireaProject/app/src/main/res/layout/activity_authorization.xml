@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context=".AuthActivity">
 
     <fragment
@@ -87,10 +88,10 @@
         android:id="@+id/enterButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
+        android:layout_marginBottom="36dp"
+        android:backgroundTint="@color/black"
         android:text="Войти"
         android:textColor="@color/white"
-        android:backgroundTint="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/table"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

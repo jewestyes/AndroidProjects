@@ -20,7 +20,7 @@ public class MusicService extends Service {
 
     @Override
     public void onCreate() {
-        mediaPlayer = MediaPlayer.create(this, R.raw.phonk);
+        mediaPlayer = MediaPlayer.create(this, R.raw.babyeasy);
         mediaPlayer.setLooping(true);
     }
 

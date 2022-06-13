@@ -55,51 +55,51 @@
             android:id="@+id/Multiplication"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:textColor="@color/white"
             android:backgroundTint="@color/black"
-            android:text="*"
             android:onClick="OnClick4"
+            android:text="*"
+            android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/Div"
             app:layout_constraintTop_toBottomOf="@+id/Num2"
-            app:layout_constraintVertical_bias="0.048" />
+            app:layout_constraintVertical_bias="0.045" />
 
         <Button
             android:id="@+id/Subtraction"
-            android:textColor="@color/white"
-            android:backgroundTint="@color/black"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:layout_marginTop="21dp"
-            android:text="-"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/black"
             android:onClick="OnClick2"
+            android:text="-"
+            android:textColor="@color/white"
             app:layout_constraintStart_toEndOf="@+id/Sum"
             app:layout_constraintTop_toBottomOf="@+id/Num2" />
 
         <Button
             android:id="@+id/Div"
             android:layout_width="48dp"
-            android:textColor="@color/white"
-            android:backgroundTint="@color/black"
             android:layout_height="48dp"
-            android:layout_marginTop="21dp"
-            android:text="/"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/black"
             android:onClick="OnClick3"
+            android:text="/"
+            android:textColor="@color/white"
             app:layout_constraintStart_toEndOf="@+id/Subtraction"
             app:layout_constraintTop_toBottomOf="@+id/Num2" />
 
         <Button
             android:id="@+id/Sum"
             android:layout_width="48dp"
-            android:textColor="@color/white"
-            android:backgroundTint="@color/black"
             android:layout_height="48dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="21dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/black"
             android:onClick="OnClick1"
             android:text="+"
+            android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/Num2" />
 
@@ -112,10 +112,10 @@
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.117"
+            app:layout_constraintHorizontal_bias="0.105"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/Num2"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.007" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

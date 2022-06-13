@@ -26,9 +26,9 @@ public class SensorFragment extends Fragment implements SensorEventListener{
     private TextView magneticTextView;
 
     private SensorManager sensorManager;
-    private Sensor game_rotation;
-    private Sensor gravity;
-    private Sensor magnetic;
+    private Sensor accelerometerSensor;
+    private Sensor pressureSensor;
+    private Sensor gameRotation;
 
     public SensorFragment() {
     }
@@ -43,9 +43,9 @@ public class SensorFragment extends Fragment implements SensorEventListener{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         sensorManager = (SensorManager) this.getActivity().getSystemService(Context.SENSOR_SERVICE);
-        game_rotation =  sensorManager.getDefaultSensor(Sensor.TYPE_GAME_ROTATION_VECTOR);
-        gravity =  sensorManager.getDefaultSensor(Sensor.TYPE_GRAVITY);
-        magnetic = sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
+        accelerometerSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        pressureSensor =  sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
+        gameRotation =  sensorManager.getDefaultSensor(Sensor.TYPE_GAME_ROTATION_VECTOR);
     }
 
     @Override
@@ -70,11 +70,11 @@ public class SensorFragment extends Fragment implements SensorEventListener{
     @Override
     public void onResume() {
         super.onResume();
-        sensorManager.registerListener(this, magnetic,
+        sensorManager.registerListener(this, accelerometerSensor,
                 SensorManager.SENSOR_DELAY_NORMAL);
-        sensorManager.registerListener(this, game_rotation,
+        sensorManager.registerListener(this, pressureSensor,
                 SensorManager.SENSOR_DELAY_NORMAL);
-        sensorManager.registerListener(this, gravity,
+        sensorManager.registerListener(this, gameRotation,
                 SensorManager.SENSOR_DELAY_NORMAL);
     }
     @Override
@@ -82,17 +82,17 @@ public class SensorFragment extends Fragment implements SensorEventListener{
         if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
 
         }
-        if (event.sensor.getType() == Sensor.TYPE_GAME_ROTATION_VECTOR){
-            float valueRotation = event.values[0];
-            gameRotationTextView.setText("Game rotation: " + valueRotation);
-        }
-        if (event.sensor.getType() == Sensor.TYPE_GRAVITY){
-            float valueGravity = event.values[0];
-            gravityTextView.setText("Gravity: "+ valueGravity);
+        if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER){
+            float valueAccelometer = event.values[0];
+            gameRotationTextView.setText("Accelerometer: " + valueAccelometer);
         }
         if (event.sensor.getType() == Sensor.TYPE_MAGNETIC_FIELD){
-            float valueMagnetic = event.values[0];
-            magneticTextView.setText("Magnetic: "+ valueMagnetic);
+            float valuePressure = event.values[0];
+            gravityTextView.setText("Pressure: "+ valuePressure);
+        }
+        if (event.sensor.getType() == Sensor.TYPE_GAME_ROTATION_VECTOR){
+            float valueRotation = event.values[0];
+            magneticTextView.setText("GameRotation: "+ valueRotation);
         }
     }
     @Override
