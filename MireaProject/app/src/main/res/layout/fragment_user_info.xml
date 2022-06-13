@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="@color/white"
     tools:context=".ui.UserInfo.UserInfoFragment"
     android:orientation="vertical">
 
@@ -26,18 +27,24 @@
         android:layout_height="wrap_content">
         <Button
             android:id="@+id/btnAdd"
+            android:textColor="@color/green"
+            android:backgroundTint="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Add">
         </Button>
         <Button
             android:id="@+id/btnRead"
+            android:textColor="#bb860c"
+            android:backgroundTint="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Read">
         </Button>
         <Button
             android:id="@+id/btnClear"
+            android:textColor="#c70000"
+            android:backgroundTint="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Clear">

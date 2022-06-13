@@ -20,6 +20,8 @@
     <Button
         android:id="@+id/btnRecord"
         android:layout_width="match_parent"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/black"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:layout_marginTop="420dp"
@@ -29,6 +31,8 @@
 
     <Button
         android:id="@+id/btnPlay"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/black"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
@@ -39,6 +43,8 @@
 
     <Button
         android:id="@+id/btnStop"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/black"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"

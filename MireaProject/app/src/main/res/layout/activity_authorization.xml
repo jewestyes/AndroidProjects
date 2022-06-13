@@ -48,11 +48,15 @@
             <Button
                 android:id="@+id/emailSignInButton"
                 android:layout_weight="1"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/black"
                 android:text="@string/sign_in" />
 
             <Button
                 android:id="@+id/emailCreateAccountButton"
                 android:layout_weight="1"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/black"
                 android:text="@string/create_account" />
         </TableRow>
     </TableLayout>
@@ -73,6 +77,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/black"
             android:text="@string/sign_out" />
 
     </LinearLayout>
@@ -83,6 +89,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="4dp"
         android:text="Войти"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/table"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

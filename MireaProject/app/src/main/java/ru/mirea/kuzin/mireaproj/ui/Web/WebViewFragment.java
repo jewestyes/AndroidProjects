@@ -2,14 +2,13 @@ package ru.mirea.kuzin.mireaproj.ui.Web;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+
+import androidx.fragment.app.Fragment;
 
 import ru.mirea.kuzin.mireaproj.R;
 
@@ -40,7 +39,7 @@ public class WebViewFragment extends Fragment {
         WebView webView = (WebView) view.findViewById(R.id.myWebView);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("https://google.com/");
+        webView.loadUrl("https://yandex.ru/"); // стартовая страница
         return view;
     }
 }

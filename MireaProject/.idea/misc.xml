@@ -38,7 +38,7 @@
         <entry key="..\:/AndroidGit/AndroidProjects/MireaProject/app/src/main/res/layout/content_main.xml" value="0.21965579710144928" />
         <entry key="..\:/AndroidGit/AndroidProjects/MireaProject/app/src/main/res/layout/fragment_audio.xml" value="0.25" />
         <entry key="..\:/AndroidGit/AndroidProjects/MireaProject/app/src/main/res/layout/fragment_blank.xml" value="0.21195652173913043" />
-        <entry key="..\:/AndroidGit/AndroidProjects/MireaProject/app/src/main/res/layout/fragment_calculate.xml" value="0.21965579710144928" />
+        <entry key="..\:/AndroidGit/AndroidProjects/MireaProject/app/src/main/res/layout/fragment_calculate.xml" value="0.33" />
         <entry key="..\:/AndroidGit/AndroidProjects/MireaProject/app/src/main/res/layout/fragment_datchic.xml" value="0.21965579710144928" />
         <entry key="..\:/AndroidGit/AndroidProjects/MireaProject/app/src/main/res/layout/fragment_gallery.xml" value="0.21965579710144928" />
         <entry key="..\:/AndroidGit/AndroidProjects/MireaProject/app/src/main/res/layout/fragment_home.xml" value="0.21965579710144928" />
@@ -50,11 +50,12 @@
         <entry key="..\:/AndroidGit/AndroidProjects/MireaProject/app/src/main/res/layout/fragment_sensor.xml" value="0.5" />
         <entry key="..\:/AndroidGit/AndroidProjects/MireaProject/app/src/main/res/layout/fragment_slideshow.xml" value="0.21965579710144928" />
         <entry key="..\:/AndroidGit/AndroidProjects/MireaProject/app/src/main/res/layout/fragment_stories.xml" value="0.3009833262077811" />
-        <entry key="..\:/AndroidGit/AndroidProjects/MireaProject/app/src/main/res/layout/fragment_user_info.xml" value="0.36666666666666664" />
+        <entry key="..\:/AndroidGit/AndroidProjects/MireaProject/app/src/main/res/layout/fragment_user_info.xml" value="0.33" />
         <entry key="..\:/AndroidGit/AndroidProjects/MireaProject/app/src/main/res/layout/fragment_userinfo.xml" value="0.3" />
         <entry key="..\:/AndroidGit/AndroidProjects/MireaProject/app/src/main/res/layout/fragment_web_view.xml" value="0.21965579710144928" />
         <entry key="..\:/AndroidGit/AndroidProjects/MireaProject/app/src/main/res/layout/item_retrofit.xml" value="0.21195652173913043" />
         <entry key="..\:/AndroidGit/AndroidProjects/MireaProject/app/src/main/res/layout/list_item.xml" value="0.30012825994014536" />
+        <entry key="..\:/AndroidGit/AndroidProjects/MireaProject/app/src/main/res/layout/list_story.xml" value="0.3009833262077811" />
         <entry key="..\:/AndroidGit/AndroidProjects/MireaProject/app/src/main/res/layout/nav_header_main.xml" value="0.21965579710144928" />
         <entry key="..\:/AndroidGit/AndroidProjects/MireaProject/app/src/main/res/layout/retrofit_main.xml" value="0.21195652173913043" />
         <entry key="..\:/AndroidGit/AndroidProjects/MireaProject/app/src/main/res/menu/activity_main_drawer.xml" value="0.36666666666666664" />

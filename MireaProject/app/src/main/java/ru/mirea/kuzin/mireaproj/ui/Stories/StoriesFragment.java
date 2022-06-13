@@ -1,61 +1,78 @@
 package ru.mirea.kuzin.mireaproj.ui.Stories;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import com.getbase.floatingactionbutton.FloatingActionButton;
+
 import java.util.ArrayList;
-import java.util.List;
-import ru.mirea.kuzin.mireaproj.R;
+
+import ru.mirea.kuzin.mireaproj.databinding.FragmentStoriesBinding;
+
 
 public class StoriesFragment extends Fragment {
+    ArrayList<Story> stories = new ArrayList<>();
+    private FragmentStoriesBinding binding;
 
-    RecyclerView rv;
-    String strCatName;
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_stories, null);
-        FloatingActionButton fab = v.findViewById(R.id.fab_action1);
-        final EditText editText = v.findViewById(R.id.editText);
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             ViewGroup container, Bundle savedInstanceState) {
+        setInitialStories();
+        binding = FragmentStoriesBinding.inflate(inflater, container, false);
+        MyAdapter adapter = new MyAdapter(getActivity(), stories);
+        binding.recycler.setAdapter(adapter);
 
-        rv = v.findViewById(R.id.rv);
-        List<String> name = new ArrayList<>();
+        binding.addStoryButton.setOnClickListener(this::onClickAddStory);
+        return binding.getRoot();
+    }
 
-        editText.setOnKeyListener(new View.OnKeyListener()
-        {
-            public boolean onKey(View v, int keyCode, KeyEvent event)
-            {
-                if(event.getAction() == KeyEvent.ACTION_DOWN &&
-                        (keyCode == KeyEvent.KEYCODE_ENTER))
-                {
-                    strCatName = editText.getText().toString();
-                    return true;
-                }
-                return false;
-            }
-        });
-        ((FloatingActionButton)v.findViewById(R.id.fab_action1)).setOnClickListener(v1 -> {
+    private void setInitialStories(){
+        stories.add(new Story("Случай в метро","История была вчера. Едем с другом в метро после универа, ну пивка само собой уже приняли. Народа полный вагон. Товарищ стоит сзади меня за спиной и задает вопрос: Кореш, а что такое ГИТХАБ?. Ну я не задумываясь отвечаю - Коньяк, сто пудов, а че такое? и оборачиваюсь. Смотрю весь народ в вагоне начинает ржать и выпадать в осадок. Потом я начал въезжать, что за мной стоит преподаватель мобильных разработок (фуражка, погоны, папочка кожаная и т д.). Вот про него он и спрашивал..Выходили из вагона под аплодисменты..."));
+    }
 
-            if(editText.getText().toString().length() != 0)
-            {
-                name.add(strCatName);
-            }
-            rv.setLayoutManager(new LinearLayoutManager(getActivity()));
-            MyAdapter adapter = new MyAdapter(getActivity(),name);
-            rv.setAdapter(adapter);
+    private void onClickAddStory(View view){
+        AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
+        final EditText storyTitle = new EditText(getContext());
+        storyTitle.setSingleLine(true);
+        alert.setTitle("Создание истории");
+        alert.setMessage("Введите название истории");
+
+        alert.setView(storyTitle);
+
+        alert.setPositiveButton("Далее", (dialogInterface, i) -> {
+            String titleValue = storyTitle.getText().toString();
+            acceptStoryContent(titleValue);
         });
 
-        rv.setLayoutManager(new LinearLayoutManager(getActivity()));
-        MyAdapter adapter = new MyAdapter(getActivity(),name);
-        rv.setAdapter(adapter);
-        return v;
+        alert.setNegativeButton("Отмена", (dialogInterface, i) -> {});
+
+        alert.show();
+    }
+
+    private void acceptStoryContent(String storyTitle){
+        AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
+        final EditText storyContent = new EditText(getContext());
+        alert.setTitle("Создание истории");
+        alert.setMessage("Введите содержание истории");
+        alert.setView(storyContent);
+
+        alert.setPositiveButton("Создать", (dialogInterface, i) -> {
+            String storyValue = storyContent.getText().toString();
+            stories.add(new Story(storyTitle, storyValue));
+        });
+
+        alert.setNegativeButton("Отмена", (dialogInterface, i) -> {});
+        alert.show();
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
     }
 }

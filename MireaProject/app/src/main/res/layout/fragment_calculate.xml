@@ -55,6 +55,8 @@
             android:id="@+id/Multiplication"
             android:layout_width="48dp"
             android:layout_height="48dp"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/black"
             android:text="*"
             android:onClick="OnClick4"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -66,6 +68,8 @@
 
         <Button
             android:id="@+id/Subtraction"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/black"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginTop="21dp"
@@ -77,6 +81,8 @@
         <Button
             android:id="@+id/Div"
             android:layout_width="48dp"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/black"
             android:layout_height="48dp"
             android:layout_marginTop="21dp"
             android:text="/"
@@ -87,6 +93,8 @@
         <Button
             android:id="@+id/Sum"
             android:layout_width="48dp"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/black"
             android:layout_height="48dp"
             android:layout_marginStart="40dp"
             android:layout_marginTop="21dp"

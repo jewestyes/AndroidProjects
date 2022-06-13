@@ -30,8 +30,6 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_authorization);
 
-        Button button = ((Button)findViewById(R.id.btnLogin));
-        button.setEnabled(false);
 
         enterButton = findViewById(R.id.enterButton);
         mEmailField = findViewById(R.id.fieldEmail);
